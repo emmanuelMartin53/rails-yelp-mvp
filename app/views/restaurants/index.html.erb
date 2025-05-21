@@ -1,9 +1,13 @@
 <h1>All restaurants</h1>
 
+<%= link_to "Add restaurant", new_restaurant_path, class: "btn btn-primary" %>
+
 <ul>
   <% @restaurants.each do | restaurant | %>
-    <li><%= link_to "See details", restaurant_path(restaurant), class: "btn btn-primary"%> <%=restaurant.name%>, <%=restaurant.address%>, <%=restaurant.phone_number %>,<%=restaurant.category%></li>
-  <% end %>
+    <li>
+      <%=restaurant.name%>, <%=restaurant.address%>, <%=restaurant.phone_number %>,<%=restaurant.category%></li>
+        <%= link_to "See details", restaurant_path(restaurant), class: "btn btn-primary"%>
+        <%= link_to "Update restaurant", edit_restaurant_path(restaurant), class: "btn btn-warning" %>
+        <%= link_to "Delete", restaurant_path(restaurant), class: "btn btn-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    <% end %>
 </ul>
-
-<%= link_to "Add restaurant", new_restaurant_path(@restaurant), class: "btn btn-primary" %>

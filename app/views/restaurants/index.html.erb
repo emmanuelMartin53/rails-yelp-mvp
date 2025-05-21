@@ -2,6 +2,8 @@
 
 <ul>
   <% @restaurants.each do | restaurant | %>
-    <li><%=restaurant.name%>, <%=restaurant.address%>, <%=restaurant.phone_number %>,<%=restaurant.category%></li>
+    <li><%= link_to "See details", restaurant_path(restaurant), class: "btn btn-primary"%> <%=restaurant.name%>, <%=restaurant.address%>, <%=restaurant.phone_number %>,<%=restaurant.category%></li>
   <% end %>
 </ul>
+
+<%= link_to "Add restaurant", new_restaurant_path(@restaurant), class: "btn btn-primary" %>

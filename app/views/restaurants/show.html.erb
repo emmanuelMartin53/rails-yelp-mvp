@@ -1,0 +1,9 @@
+<h1><%=@restaurant.name%>
+
+<h3><%=@restaurant.address%></h3>
+<h3><%=@restaurant.phone_number%></h3>
+<h3><%=@restaurant.category%></h3>
+
+<%= link_to "Retour à l'accueil", restaurants_path(@restaurants), class: "btn btn-info"%>
+<%= link_to "Add restaurant", new_restaurant_path(@restaurant), class: "btn btn-primary" %>
+
